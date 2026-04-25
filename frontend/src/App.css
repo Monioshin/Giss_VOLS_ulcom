@@ -1,0 +1,200 @@
+.app {
+  display: grid;
+  grid-template-columns: 300px 1fr 340px;
+  height: 100vh;
+  position: relative;
+}
+
+.left-panel,
+.right-panel {
+  padding: 12px;
+  border-right: 1px solid #d8d8d8;
+  overflow: auto;
+  background: #fafafa;
+}
+
+.right-panel {
+  border-right: none;
+  border-left: 1px solid #d8d8d8;
+}
+
+.toolbar {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.tool-list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 12px;
+}
+
+button.active {
+  background: #ddd6fe;
+}
+
+label {
+  display: block;
+  margin-top: 8px;
+  margin-bottom: 4px;
+  font-size: 13px;
+}
+
+select,
+input,
+textarea,
+button {
+  width: 100%;
+  box-sizing: border-box;
+  margin-bottom: 8px;
+}
+
+.map-wrap {
+  height: 100vh;
+}
+
+.map {
+  height: 100%;
+  width: 100%;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  max-height: 220px;
+  overflow: auto;
+}
+
+.list button {
+  text-align: left;
+  padding: 6px;
+}
+
+.row-actions {
+  display: flex;
+  gap: 6px;
+}
+
+.row-actions button:first-child {
+  flex: 1;
+}
+
+.layer-switches {
+  margin-top: 8px;
+}
+
+.layer-switches label {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.layer-switches input {
+  width: auto;
+  margin: 0;
+}
+
+.left-panel .layer-switches + label {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  margin-top: 8px;
+}
+
+.left-panel .layer-switches + label input {
+  width: auto;
+  margin: 0;
+}
+
+.hint {
+  font-size: 12px;
+  color: #505050;
+}
+
+.hint-box {
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  padding: 8px;
+  margin-bottom: 8px;
+  font-size: 12px;
+}
+
+.passport {
+  position: absolute;
+  right: 360px;
+  top: 16px;
+  width: 320px;
+  background: white;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 12px;
+  z-index: 1000;
+}
+
+.passport textarea {
+  min-height: 120px;
+}
+
+.passport-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.passport-actions button {
+  margin: 0;
+}
+
+.modal-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 1200;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal {
+  width: 420px;
+  max-width: 90vw;
+  background: #fff;
+  border-radius: 8px;
+  padding: 16px;
+}
+
+.context-menu {
+  position: fixed;
+  z-index: 2000;
+  background: #fff;
+  border: 1px solid #cfcfcf;
+  border-radius: 8px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  min-width: 160px;
+  padding: 8px;
+}
+
+.context-menu button {
+  margin: 0 0 6px;
+}
+
+.context-menu button:last-child {
+  margin-bottom: 0;
+}
+
+.bend-marker span {
+  display: block;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #1d4ed8;
+  border: 2px solid #fff;
+  box-shadow: 0 0 0 1px #1d4ed8;
+}
+
+.leaflet-div-icon.bend-marker {
+  background: transparent;
+  border: none;
+}
