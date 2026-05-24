@@ -1,5 +1,0 @@
-{
-  "enabled": false,
-  "intervalMinutes": 60,
-  "maxBackups": 30
-}

@@ -1,0 +1,42 @@
+# Зависимости (ставятся через npm install)
+node_modules/
+
+# Сборка фронта
+frontend/dist/
+frontend/dist-ssr/
+
+# Desktop / Electron артефакты
+frontend/release/
+
+# Локальные секреты и env
+.env
+.env.*
+!.env.example
+
+# Логи
+logs/
+*.log
+npm-debug.log*
+
+# OS / IDE
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/*
+!.vscode/extensions.json
+
+# --- Backend: runtime-данные (не исходники!) ---
+# SQLite: узлы, муфты, кроссы, линии, сварки, проекты — только на сервере/локально.
+# Код (muftaTkLayout.js, splice/, routesEngine.js и т.д.) коммитится как обычно.
+backend/data/**/*.sqlite
+backend/data/**/*.sqlite-*
+backend/data/**/*.sqlite-shm
+backend/data/**/*.sqlite-wal
+backend/data/**/*.bak
+backend/data/backup-config.json
+backend/data/backups/*
+!backend/data/backups/.gitkeep
+
+# Пустые каталоги для первого запуска (сами .gitkeep — в репозитории)
+!backend/data/.gitkeep
+!backend/data/workspaces/.gitkeep
