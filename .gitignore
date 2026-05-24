@@ -1,6 +1,11 @@
 # Зависимости (ставятся через npm install)
 node_modules/
 
+
+
+.md 
+
+
 # Сборка фронта
 frontend/dist/
 frontend/dist-ssr/
