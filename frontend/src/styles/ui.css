@@ -1,0 +1,454 @@
+/* GIS UI — base controls (engineering / premium) */
+
+/* ---- Form fields ---- */
+.gis-input,
+.gis-select,
+.gis-textarea {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 100%;
+  min-height: var(--control-h-md);
+  padding: 0 var(--control-px);
+  font-family: var(--gis-font);
+  font-size: var(--text-sm);
+  line-height: 1.4;
+  color: var(--gis-text);
+  background: var(--gis-input-bg);
+  border: 1px solid var(--gis-border);
+  border-radius: var(--radius-md);
+  transition:
+    border-color 150ms ease,
+    box-shadow 150ms ease,
+    background 150ms ease;
+}
+
+.gis-textarea {
+  min-height: 88px;
+  padding: var(--space-2) var(--control-px);
+  resize: vertical;
+}
+
+.gis-input--sm,
+.gis-select--sm {
+  min-height: var(--control-h-sm);
+  font-size: var(--text-xs);
+  padding: 0 calc(var(--control-px) - 2px);
+}
+
+.gis-input:hover,
+.gis-select:hover,
+.gis-textarea:hover {
+  border-color: var(--gis-text-dim);
+}
+
+.gis-input:focus-visible,
+.gis-select:focus-visible,
+.gis-textarea:focus-visible {
+  outline: none;
+  border-color: var(--gis-primary);
+  box-shadow: var(--focus-ring);
+}
+
+.gis-input::placeholder,
+.gis-textarea::placeholder {
+  color: var(--gis-text-dim);
+}
+
+.gis-input:disabled,
+.gis-select:disabled,
+.gis-textarea:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  background: var(--gis-border-subtle);
+}
+
+.gis-input[aria-invalid='true'],
+.gis-select[aria-invalid='true'],
+.gis-textarea[aria-invalid='true'] {
+  border-color: var(--gis-danger);
+  box-shadow: 0 0 0 2px var(--gis-danger-muted);
+}
+
+/* Legacy scope: forms not yet migrated to gis-field */
+.modal input:not([type='checkbox']):not([type='radio']):not([type='color']),
+.modal select,
+.modal textarea,
+.passport-drawer__body input:not([type='checkbox']):not([type='radio']):not([type='color']),
+.passport-drawer__body select,
+.passport-drawer__body textarea,
+.users-drawer input:not([type='checkbox']):not([type='radio']),
+.users-drawer select,
+.users-drawer textarea,
+.settings-app input:not([type='checkbox']):not([type='radio']):not([type='color']),
+.settings-app select,
+.settings-app textarea,
+.auth-form input:not([type='checkbox']) {
+  box-sizing: border-box;
+  width: 100%;
+  min-height: var(--control-h-md);
+  padding: 0 var(--control-px);
+  font-family: var(--gis-font);
+  font-size: var(--text-sm);
+  color: var(--gis-text);
+  background: var(--gis-input-bg);
+  border: 1px solid var(--gis-border);
+  border-radius: var(--radius-md);
+  margin-bottom: 0;
+  transition: border-color 150ms ease, box-shadow 150ms ease;
+}
+
+.modal input:focus-visible,
+.modal select:focus-visible,
+.modal textarea:focus-visible,
+.passport-drawer__body input:focus-visible,
+.passport-drawer__body select:focus-visible,
+.passport-drawer__body textarea:focus-visible,
+.settings-app input:focus-visible,
+.settings-app select:focus-visible,
+.settings-app textarea:focus-visible,
+.auth-form input:focus-visible {
+  outline: none;
+  border-color: var(--gis-primary);
+  box-shadow: var(--focus-ring);
+}
+
+/* ---- Buttons ---- */
+.gis-btn {
+  box-sizing: border-box;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  width: auto;
+  min-width: 0;
+  height: var(--control-h-md);
+  padding: 0 var(--control-px);
+  margin: 0;
+  font-family: var(--gis-font);
+  font-size: var(--text-sm);
+  font-weight: 500;
+  line-height: 1;
+  white-space: nowrap;
+  color: var(--gis-text);
+  background: var(--gis-surface);
+  border: 1px solid var(--gis-border);
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition:
+    background 150ms ease,
+    border-color 150ms ease,
+    color 150ms ease,
+    box-shadow 150ms ease;
+}
+
+.gis-btn:hover:not(:disabled) {
+  border-color: var(--gis-text-dim);
+  background: var(--gis-border-subtle);
+}
+
+.gis-btn:focus-visible {
+  outline: none;
+  box-shadow: var(--focus-ring);
+}
+
+.gis-btn:active:not(:disabled) {
+  transform: translateY(0.5px);
+}
+
+.gis-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.gis-btn--primary {
+  color: #fff;
+  background: var(--gis-primary);
+  border-color: var(--gis-primary);
+}
+
+.gis-btn--primary:hover:not(:disabled) {
+  background: var(--gis-primary-hover);
+  border-color: var(--gis-primary-hover);
+}
+
+.gis-btn--secondary {
+  background: var(--gis-surface);
+  border-color: var(--gis-border);
+}
+
+.gis-btn--ghost {
+  background: transparent;
+  border-color: transparent;
+}
+
+.gis-btn--ghost:hover:not(:disabled) {
+  background: var(--gis-primary-muted);
+  border-color: transparent;
+  color: var(--gis-primary);
+}
+
+.gis-btn--danger {
+  color: var(--gis-danger);
+  background: var(--gis-danger-muted);
+  border-color: transparent;
+}
+
+.gis-btn--danger:hover:not(:disabled) {
+  color: #fff;
+  background: var(--gis-danger);
+  border-color: var(--gis-danger);
+}
+
+.gis-btn--sm {
+  height: var(--control-h-sm);
+  padding: 0 calc(var(--control-px) - 2px);
+  font-size: var(--text-xs);
+}
+
+.gis-btn--lg {
+  height: var(--control-h-lg);
+  padding: 0 calc(var(--control-px) + 4px);
+}
+
+.gis-btn--block {
+  width: 100%;
+}
+
+.gis-btn--icon {
+  width: var(--control-h-md);
+  min-width: var(--control-h-md);
+  padding: 0;
+  font-size: 18px;
+  line-height: 1;
+}
+
+.gis-btn--icon.gis-btn--sm {
+  width: var(--control-h-sm);
+  min-width: var(--control-h-sm);
+}
+
+/* ---- Form composition ---- */
+.gis-field {
+  display: block;
+  margin-bottom: var(--space-3);
+}
+
+.gis-field:last-child {
+  margin-bottom: 0;
+}
+
+.gis-field__label {
+  display: block;
+  margin-bottom: var(--space-1);
+  font-size: var(--text-sm);
+  font-weight: 500;
+  color: var(--gis-text-muted);
+}
+
+.gis-field__hint {
+  display: block;
+  margin-top: var(--space-1);
+  font-size: var(--text-xs);
+  color: var(--gis-text-dim);
+  line-height: 1.4;
+}
+
+.gis-field__error {
+  display: block;
+  margin-top: var(--space-1);
+  font-size: var(--text-xs);
+  color: var(--gis-danger);
+}
+
+.gis-field__row {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  margin-bottom: var(--space-2);
+  font-size: var(--text-sm);
+  color: var(--gis-text-muted);
+  cursor: pointer;
+}
+
+.gis-field__row input[type='checkbox'],
+.gis-field__row input[type='radio'] {
+  width: auto;
+  margin: 0;
+  accent-color: var(--gis-primary);
+}
+
+/* ---- Layout utilities ---- */
+.gis-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: var(--space-2);
+}
+
+.gis-toolbar label {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  margin: 0;
+  font-size: var(--text-xs);
+  color: var(--gis-text-muted);
+}
+
+.gis-toolbar .gis-input,
+.gis-toolbar .gis-select {
+  width: auto;
+  min-width: 140px;
+}
+
+.gis-btn-group {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.gis-btn-group .gis-btn {
+  flex: 0 0 auto;
+}
+
+/* Segmented control (auth tabs) */
+.gis-segmented {
+  display: flex;
+  gap: 0;
+  padding: 3px;
+  background: var(--gis-border-subtle);
+  border: 1px solid var(--gis-border);
+  border-radius: var(--radius-lg);
+}
+
+.gis-segmented .gis-btn {
+  flex: 1;
+  height: var(--control-h-sm);
+  border: none;
+  background: transparent;
+  box-shadow: none;
+}
+
+.gis-segmented .gis-btn:hover:not(:disabled) {
+  background: var(--gis-surface);
+}
+
+.gis-segmented .gis-btn.is-active,
+.gis-segmented .gis-btn.active {
+  background: var(--gis-surface);
+  color: var(--gis-primary);
+  font-weight: 600;
+  box-shadow: var(--gis-shadow-sm);
+}
+
+/* Hint text utility */
+.hint {
+  font-size: var(--text-xs);
+  color: var(--gis-text-muted);
+  line-height: 1.45;
+}
+
+/* ---- Settings / passport column fields ---- */
+.settings-fields,
+.passport-fields {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.settings-field,
+.passport-field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  margin-bottom: var(--space-3);
+}
+
+.settings-field:last-child,
+.passport-field:last-child {
+  margin-bottom: 0;
+}
+
+.settings-field__label,
+.passport-field__label {
+  font-size: var(--text-sm);
+  font-weight: 500;
+  color: var(--gis-text-muted);
+  line-height: 1.35;
+}
+
+.settings-field .gis-input,
+.settings-field .gis-select,
+.settings-field .gis-textarea,
+.passport-field .gis-input,
+.passport-field .gis-select,
+.passport-field .gis-textarea {
+  width: 100%;
+}
+
+.settings-choice,
+.passport-choice {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  min-height: var(--control-h-md);
+  margin-bottom: var(--space-2);
+  font-size: var(--text-sm);
+  color: var(--gis-text);
+  cursor: pointer;
+}
+
+.settings-choice input,
+.passport-choice input {
+  width: auto;
+  min-height: auto;
+  margin: 0;
+  flex-shrink: 0;
+  accent-color: var(--gis-primary);
+}
+
+.settings-subsection {
+  margin-top: var(--space-5);
+  padding-top: var(--space-4);
+  border-top: 1px solid var(--gis-border-subtle);
+}
+
+.settings-subsection h3 {
+  margin-top: 0;
+}
+
+.settings-section__lead {
+  margin: 0 0 var(--space-4);
+}
+
+/* Legacy SettingsPanel labels: stack title above control */
+.settings-section > label:not(.settings-choice):not(.settings-backup-toggle) {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: var(--space-1);
+  margin-bottom: var(--space-3);
+  font-size: var(--text-sm);
+  font-weight: 500;
+  color: var(--gis-text-muted);
+}
+
+.settings-section > label:not(.settings-choice) input,
+.settings-section > label:not(.settings-choice) select,
+.settings-section > label:not(.settings-choice) textarea {
+  font-weight: 400;
+  color: var(--gis-text);
+}
+
+.settings-app__nav .gis-btn {
+  justify-content: flex-start;
+  width: 100%;
+  margin-bottom: var(--space-1);
+  text-align: left;
+}
+
+.settings-app__nav .gis-btn.is-active {
+  background: var(--gis-primary-muted);
+  color: var(--gis-primary);
+  font-weight: 600;
+}
