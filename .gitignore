@@ -1,7 +1,7 @@
 # Зависимости (ставятся через npm install)
 node_modules/
 
-# Документация проекта
+
 ДОКУМЕНТАЦИЯ.md
 УСТАНОВКА.md
 docs/
@@ -45,3 +45,4 @@ backend/data/backups/*
 # Пустые каталоги для первого запуска (сами .gitkeep — в репозитории)
 !backend/data/.gitkeep
 !backend/data/workspaces/.gitkeep
+
